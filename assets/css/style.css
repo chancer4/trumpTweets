@@ -1,0 +1,12 @@
+/* line 13, ../compass/sass/style.scss */
+img {
+  position: relative;
+  width: 100%;
+}
+
+/* line 18, ../compass/sass/style.scss */
+.tweet {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
