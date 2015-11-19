@@ -3,21 +3,31 @@
 
 body{
 	.container.B{
+		padding: 0px;
+		margin: 0px;
+		width: 100%;
 		.row.B{
-			height: 65vh;
+			padding: 0px;
+			height: 700px;
+			width: 100%;
 			overflow: hidden;
-			.image{
-				position:relative;
-				width: 100%;
-				height: 65vh;
-			}
-			.tweet{
-				position: absolute;
-				top: 45%;
-				left: 100px;
-				font-size: 20px;
-				color: white;
-				text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+			margin: 0;
+			.col-xs-12{
+				padding: 0px;
+				margin: 0px;
+				.image{
+					position:relative;
+					width: 100%;
+					height: 700px;
+				}
+				.tweet{
+					position: absolute;
+					top: 30%;
+					left: 30px;
+					font-size: 50px;
+					color: white;
+					text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+				}
 			}
 
 		}

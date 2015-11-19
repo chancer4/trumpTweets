@@ -27,7 +27,7 @@ twitterApp.directive('backgroundImageDirective', function () {
 
 
        element.css({
-       		'background': 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(' + attrs.backgroundImageDirective + ')',
+       		'background': 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(' + attrs.backgroundImageDirective + ')',
            	'background-repeat': 'no-repeat',
            	'background-size': 'cover'
        });
