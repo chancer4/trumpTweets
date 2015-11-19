@@ -23,12 +23,13 @@ twitterApp.controller('twitterCtrl', function ($scope, $http){
 
 twitterApp.directive('backgroundImageDirective', function () {
    return function (scope, element, attrs) {
-       		console.log(attrs)
+       	console.log(attrs)
+
 
        element.css({
        		'background': 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(' + attrs.backgroundImageDirective + ')',
            	'background-repeat': 'no-repeat',
-           	'background-size': '100%'
+           	'background-size': 'cover'
        });
    };
 });
