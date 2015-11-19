@@ -1,6 +1,6 @@
 var twitterApp = angular.module('twitterApp', []);
 // 'ngRoute'
-var trumpURL = "http://ec2-52-34-116-224.us-west-2.compute.amazonaws.com/trump-tweets/?hash=trump&secondHash=ninja";
+var trumpURL = "http://ec2-52-34-116-224.us-west-2.compute.amazonaws.com/trump-tweets/?hash=trump&secondHash=women";
 var exJson = "example.json"
 // , $ngRoute
 twitterApp.controller('twitterCtrl', function ($scope, $http){
@@ -16,5 +16,9 @@ twitterApp.controller('twitterCtrl', function ($scope, $http){
 			}
 		})
 	}
+
 	$scope.getTweets();
+	
 });
+
+

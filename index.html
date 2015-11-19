@@ -22,7 +22,8 @@
 		<div class="row B" ng-repeat="tweet in tweetList">
 			<div class="col-xs-12">
 				<div>				
-					<img src="{{tweet.user.profile_banner_url}}"> <!-- -->
+					<div class='image image-background' ng-style="{'background': 'linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), url(" + tweet.user.profile_banner_url + " )'}">
+					</div>
 					<div class="tweet">
 						{{tweet.text}}
 					</div>

@@ -1,11 +1,20 @@
-/* line 7, ../compass/sass/style.scss */
+/* line 6, ../compass/sass/style.scss */
+body .container.B .row.B {
+  height: 65vh;
+  overflow: hidden;
+  background-color: black;
+}
+/* line 10, ../compass/sass/style.scss */
 body .container.B .row.B img {
   position: relative;
   width: 100%;
 }
-/* line 11, ../compass/sass/style.scss */
+/* line 14, ../compass/sass/style.scss */
 body .container.B .row.B .tweet {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 45%;
+  left: 100px;
+  font-size: 20px;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }

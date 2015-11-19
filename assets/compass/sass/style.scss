@@ -4,16 +4,22 @@
 body{
 	.container.B{
 		.row.B{
+			height: 65vh;
+			overflow: hidden;
+			background-color: black;
 			img{
 				position:relative;
-				width:100%;
+				width: 100%;
 			}
 			.tweet{
 				position: absolute;
-				top: 0;
-				left:0;
+				top: 45%;
+				left: 100px;
+				font-size: 20px;
+				color: white;
+				text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 			}
-			
+
 		}
 	}
 }
