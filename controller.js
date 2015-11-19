@@ -12,6 +12,10 @@ twitterApp.controller('twitterCtrl', function ($scope, $http){
 				if(!tweetData.statuses[i].user.profile_banner_url){
 					tweetData.statuses[i].user.profile_banner_url = "assets/images/trump.jpg"
 				}
+				if(/^(RT\s)/.test(tweetData.statuses[i].text)){
+					tweetData.statuses.splice(i,1)
+					i--;
+				}
 			}
 			console.log(tweetData.statuses)
 			$scope.tweetList = tweetData.statuses.concat($scope.tweetList);
