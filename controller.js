@@ -8,7 +8,12 @@ twitterApp.controller('twitterCtrl', function ($scope, $http){
 	maxNumTweets =  100;
 	$scope.getTweets = function(){
 		$http.get(trumpURL).success(function (tweetData){
-			console.log(tweetData);
+			for(i = 0; i < tweetData.statuses.length; i++){
+				if(!tweetData.statuses[i].user.profile_banner_url){
+					tweetData.statuses[i].user.profile_banner_url = "assets/images/trump.jpg"
+				}
+			}
+			console.log(tweetData.statuses)
 			$scope.tweetList = tweetData.statuses.concat($scope.tweetList);
 			var tweetLength = $scope.tweetList.length; 
 			if (tweetLength > maxNumTweets){
@@ -23,9 +28,6 @@ twitterApp.controller('twitterCtrl', function ($scope, $http){
 
 twitterApp.directive('backgroundImageDirective', function () {
    return function (scope, element, attrs) {
-       	console.log(attrs)
-
-
        element.css({
        		'background': 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(' + attrs.backgroundImageDirective + ')',
            	'background-repeat': 'no-repeat',
