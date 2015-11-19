@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 	<script src="angular.min.js"></script>
-	<script src="bootstrap/js.bootstrap.min.js" crossorigin="anonymous"></script>
+	<script src="bootstrap/js/bootstrap.min.js" ></script>
 	<script src="controller.js"></script>
 </head>
 <body ng-controller="twitterCtrl">
@@ -22,7 +22,7 @@
 		<div class="row B" ng-repeat="tweet in tweetList">
 			<div class="col-xs-12">
 				<div>				
-					<div class='image image-background' ng-style="{'background': 'linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), url(" + tweet.user.profile_banner_url + " )'}">
+					<div class='image' background-image-directive="{{tweet.user.profile_banner_url}}">
 					</div>
 					<div class="tweet">
 						{{tweet.text}}

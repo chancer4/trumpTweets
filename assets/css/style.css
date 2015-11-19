@@ -2,12 +2,12 @@
 body .container.B .row.B {
   height: 65vh;
   overflow: hidden;
-  background-color: black;
 }
-/* line 10, ../compass/sass/style.scss */
-body .container.B .row.B img {
+/* line 9, ../compass/sass/style.scss */
+body .container.B .row.B .image {
   position: relative;
   width: 100%;
+  height: 65vh;
 }
 /* line 14, ../compass/sass/style.scss */
 body .container.B .row.B .tweet {

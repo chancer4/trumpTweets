@@ -21,4 +21,16 @@ twitterApp.controller('twitterCtrl', function ($scope, $http){
 	
 });
 
+twitterApp.directive('backgroundImageDirective', function () {
+   return function (scope, element, attrs) {
+       		console.log(attrs)
+
+       element.css({
+           'background-image': 'url(' + attrs.backgroundImageDirective + ')',
+           'background-repeat': 'no-repeat',
+           'background-size': '100%'
+       });
+   };
+});
+
 
