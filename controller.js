@@ -8,26 +8,40 @@ twitterApp.controller('twitterCtrl', function ($scope, $http){
 	maxNumTweets =  100;
 	$scope.getTweets = function(){
 		$http.get(trumpURL).success(function (tweetData){
-			console.log(tweetData)
-			for(i = 0; i < tweetData.statuses.length; i++){
-				if(!tweetData.statuses[i].user.profile_banner_url){
-					tweetData.statuses[i].user.profile_banner_url = "assets/images/trump.jpg"
+			
+			var newTweetsList = tweetData.statuses;
+			console.log(newTweetsList)
+			for(i = 0; i < newTweetsList.length; i++){
+				if(!newTweetsList[i].user.profile_banner_url){
+					newTweetsList[i].user.profile_banner_url = "assets/images/trump.jpg"
 				}
-				if(/^(RT\s)/.test(tweetData.statuses[i].text)){
-					tweetData.statuses.splice(i,1)
+				if(/^(RT\s)/.test(newTweetsList[i].text)){
+					newTweetsList.splice(i,1)
 					i--;
 				}
 			}
-			console.log(tweetData.statuses)
-			$scope.tweetList = tweetData.statuses.concat($scope.tweetList);
+			for(i = 0; i < newTweetsList.length; i++){
+				for(j = 0; j < $scope.tweetList.length; j++){
+					if(newTweetsList[i].id === $scope.tweetList[j].id){
+						newTweetsList.splice(i,1)
+						i--;
+						break;
+					}
+				}
+			}
+			//Add new tweets to the list
+			$scope.tweetList = newTweetsList.concat($scope.tweetList);
 			var tweetLength = $scope.tweetList.length; 
 			if (tweetLength > maxNumTweets){
 				$scope.tweetList.splice(maxNumTweets, (tweetLength-1))
 			}
+			
 		})
 	}
-
 	$scope.getTweets();
+	var tweetGetter = setInterval(function(){
+		$scope.getTweets();
+	}, 30000);
 	
 });
 
