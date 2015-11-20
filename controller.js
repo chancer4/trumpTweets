@@ -1,5 +1,6 @@
 var twitterApp = angular.module('twitterApp', ['ngRoute']);
-var trumpURL = "http://ec2-52-34-116-224.us-west-2.compute.amazonaws.com/trump-tweets/?hash=trump&secondHash=clinton";
+var trumpURL = "http://ec2-52-34-116-224.us-west-2.compute.amazonaws.com/trump-tweets/?hash=trump";
+var hillaryURL = "http://ec2-52-34-116-224.us-west-2.compute.amazonaws.com/trump-tweets/?hash=clinton"
 var exJson = "example.json"
 
 twitterApp.config(function($routeProvider){
@@ -24,7 +25,12 @@ twitterApp.controller('twitterCtrl', function ($scope, $http){
 	$scope.tweetList = [];
 	maxNumTweets =  100;
 	$scope.getTweets = function(){
-		$http.get(trumpURL).success(function (tweetData){
+		if($routeProvider.personName == "hillary"){
+			searchURL = hillaryURL;
+		} else{
+			searchURL = trumpURL;
+		}
+		$http.get(searchURL).success(function (tweetData){
 			
 			var newTweetsList = tweetData.statuses;
 			console.log(newTweetsList)
