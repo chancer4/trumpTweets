@@ -2,6 +2,22 @@
 
 
 body{
+	.container.C{
+		.row.C{
+			#hillaryPic{
+				width:100%;
+			}
+			#hillaryPic:hover {
+				content: url('../images/hillary-vampire.jpg');
+			}
+			#trumpPic{
+				width:100%;
+			}
+			#trumpPic:hover{
+				content: url('../images/trump-face.jpeg')
+			}
+		}
+	}
 	.container.B{
 		padding: 0px;
 		margin: 0px;
