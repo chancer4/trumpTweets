@@ -18,17 +18,30 @@ body .container.B .row.B .col-xs-12 {
   margin: 0px;
 }
 /* line 18, ../compass/sass/style.scss */
-body .container.B .row.B .col-xs-12 .image {
+body .container.B .row.B .col-xs-12 .tweet-content {
   position: relative;
-  width: 100%;
   height: 700px;
-}
-/* line 23, ../compass/sass/style.scss */
-body .container.B .row.B .col-xs-12 .tweet {
-  position: absolute;
-  top: 30%;
-  left: 30px;
+  width: 100%;
   font-size: 50px;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+/* line 25, ../compass/sass/style.scss */
+body .container.B .row.B .col-xs-12 .tweet-content .tweet-text {
+  position: absolute;
+  top: 30%;
+  width: 90%;
+  margin: 0 5%;
+}
+/* line 31, ../compass/sass/style.scss */
+body .container.B .row.B .col-xs-12 .tweet-content .tweet-metadata {
+  position: absolute;
+  top: 70%;
+  width: 90%;
+  margin: 0 5%;
+}
+/* line 37, ../compass/sass/style.scss */
+body .container.B .row.B .col-xs-12 .tweet-content .small-text {
+  font-size: 16px;
+  float: left;
 }

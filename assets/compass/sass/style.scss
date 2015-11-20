@@ -15,18 +15,29 @@ body{
 			.col-xs-12{
 				padding: 0px;
 				margin: 0px;
-				.image{
-					position:relative;
-					width: 100%;
+				.tweet-content{
+					position: relative;
 					height: 700px;
-				}
-				.tweet{
-					position: absolute;
-					top: 30%;
-					left: 30px;
+					width: 100%;
 					font-size: 50px;
 					color: white;
 					text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+					.tweet-text{
+						position: absolute;
+						top: 30%;
+						width: 90%;
+						margin: 0 5%;
+					}
+					.tweet-metadata{
+						position: absolute;
+						top: 70%;
+						width: 90%;
+						margin: 0 5%;
+					}
+					.small-text{
+						font-size: 16px;
+						float: left;
+					}
 				}
 			}
 

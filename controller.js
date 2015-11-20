@@ -1,6 +1,6 @@
 var twitterApp = angular.module('twitterApp', []);
 // 'ngRoute'
-var trumpURL = "http://ec2-52-34-116-224.us-west-2.compute.amazonaws.com/trump-tweets/?hash=trump&secondHash=women";
+var trumpURL = "http://ec2-52-34-116-224.us-west-2.compute.amazonaws.com/trump-tweets/?hash=trump&secondHash=clinton";
 var exJson = "example.json"
 // , $ngRoute
 twitterApp.controller('twitterCtrl', function ($scope, $http){
@@ -8,6 +8,7 @@ twitterApp.controller('twitterCtrl', function ($scope, $http){
 	maxNumTweets =  100;
 	$scope.getTweets = function(){
 		$http.get(trumpURL).success(function (tweetData){
+			console.log(tweetData)
 			for(i = 0; i < tweetData.statuses.length; i++){
 				if(!tweetData.statuses[i].user.profile_banner_url){
 					tweetData.statuses[i].user.profile_banner_url = "assets/images/trump.jpg"
