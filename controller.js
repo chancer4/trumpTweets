@@ -21,11 +21,11 @@ twitterApp.controller('selectPersonCtrl', function ($scope){
 
 });
 
-twitterApp.controller('twitterCtrl', function ($scope, $http){
+twitterApp.controller('twitterCtrl', function ($scope, $http, $routeParams){
 	$scope.tweetList = [];
 	maxNumTweets =  100;
 	$scope.getTweets = function(){
-		if($routeProvider.personName == "hillary"){
+		if($routeParams.personName == "hillary"){
 			searchURL = hillaryURL;
 		} else{
 			searchURL = trumpURL;
