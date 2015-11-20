@@ -1,0 +1,14 @@
+<div class="container B">
+	<div class="row B" ng-repeat="tweet in tweetList">
+		<div class="col-xs-12">
+			<div class="tweet-content" background-image-directive="{{tweet.user.profile_banner_url}}">
+				<div class="tweet-text">{{tweet.text}}</div>
+				<div class="tweet-metadata">
+					<div class="tweet-user small-text">{{tweet.user.name}}</div>
+					<div class="tweet-location small-text">&nbsp* {{tweet.user.location}}</div>
+					<div class="tweet-age small-text">&nbsp* {{tweet.created_at}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

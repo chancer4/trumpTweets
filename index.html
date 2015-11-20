@@ -6,10 +6,11 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 	<script src="angular.min.js"></script>
+	<script src="angular-route.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js" ></script>
 	<script src="controller.js"></script>
 </head>
-<body ng-controller="twitterCtrl">
+<body>
 
 	<div class="container A">
 		<div class="row A">
@@ -18,25 +19,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="container B">
-		<div class="row B" ng-repeat="tweet in tweetList">
-			<div class="col-xs-12">
-				<div class="tweet-content" background-image-directive="{{tweet.user.profile_banner_url}}">
-					<div class="tweet-text">{{tweet.text}}</div>
-					<div class="tweet-metadata">
-						<div class="tweet-user small-text">{{tweet.user.name}}</div>
-						<div class="tweet-location small-text">&nbsp* {{tweet.user.location}}</div>
-						<div class="tweet-age small-text">&nbsp* {{tweet.created_at}}</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-
-
-
+	<div ng-view></div>
 </body>
 </html>
