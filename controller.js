@@ -29,8 +29,12 @@ twitterApp.controller('twitterCtrl', function ($scope, $http){
 			var newTweetsList = tweetData.statuses;
 			console.log(newTweetsList)
 			for(i = 0; i < newTweetsList.length; i++){
-				if(!newTweetsList[i].user.profile_banner_url){
-					newTweetsList[i].user.profile_banner_url = "assets/images/trump.jpg"
+				if( !newTweetsList[i].user.profile_banner_url ){
+					if( newTweetsList[i].user.default_profile_image ){
+						newTweetsList[i].user.profile_banner_url = "assets/images/trump.jpg"
+					} else {
+						newTweetsList[i].user.profile_banner_url = newTweetsList[i].user.profile_image_url
+					}
 				}
 				if(/^(RT\s)/.test(newTweetsList[i].text)){
 					newTweetsList.splice(i,1)
